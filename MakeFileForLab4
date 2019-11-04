@@ -1,0 +1,19 @@
+CC = g++
+CFLAGS=-c -Wall
+
+all: main
+
+main: main.o sum.o multiply.o
+	$(CC) main.o sum.o multiply.o -o main
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+sum.o: sum.cpp
+	$(CC) $(CFLAGS) sum.cpp
+
+multiply.o: multiply.cpp
+	$(CC) $(CFLAGS) multiply.cpp
+
+clean:
+	rm -rf *.o main
